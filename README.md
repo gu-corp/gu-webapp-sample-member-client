@@ -6,6 +6,9 @@
 ```
 npm i
 ```
+## Put .env.local to the root folder
+- Please see .env.local.example
+
 ## Run the development server:
 
 ```bash
