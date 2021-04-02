@@ -22,10 +22,11 @@ const Books = () => {
 
   return (
     <Layout>
-      <h3>Books</h3>
+      <h1>Books</h1>
       <div>
         { AuthUser.email ? <BookList /> : <div>you need to login</div> }
       </div>
+      <h2>Demos</h2>
       <DemoPageLinks />
     </Layout>
   )

@@ -22,7 +22,7 @@ const Demo = ({ favoriteColor, children }) => {
   const AuthUser = useAuthUser()
   return (
     <Layout>
-      <h3>Example: SSR + no ID token</h3>
+      <h1>Example: SSR + no ID token</h1>
       <p>
         This page requires authentication. It will do a server-side redirect
         (307) to the login page if the auth cookies are not set.
@@ -32,6 +32,7 @@ const Demo = ({ favoriteColor, children }) => {
         so it does not have server-side access to the user ID token.
       </p>
       <p>Your favorite color is: {favoriteColor}</p>
+      <h2>Demos</h2>
     <DemoPageLinks />
     </Layout>
   )

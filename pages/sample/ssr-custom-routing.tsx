@@ -17,7 +17,7 @@ const Demo = ({ emailVerified, children }) => {
   const AuthUser = useAuthUser()
   return (
     <Layout>
-      <h3>Example: SSR + custom routing</h3>
+      <h1>Example: SSR + custom routing</h1>
       <p>
         This page requires authentication. It will do a{' '}
         <strong>custom/dynamic</strong>
@@ -43,6 +43,7 @@ const Demo = ({ emailVerified, children }) => {
         returned by `getServerSideProps` to perform the custom routing.
       </p>
       <p>User's email is verified: {emailVerified ? 'yes' : 'no'}</p>
+      <h2>Demos</h2>
       <DemoPageLinks />
     </Layout>
   )

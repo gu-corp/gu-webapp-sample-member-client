@@ -51,7 +51,7 @@ const Demo = () => {
 
   return (
     <Layout>
-      <h3>Example: static + loader</h3>
+      <h1>Example: static + loader</h1>
       <p>
         This page requires is static but requires authentication. Before the
         Firebase client SDK initializes, it shows a loader. After
@@ -59,6 +59,7 @@ const Demo = () => {
         redirects to the login page.
       </p>
       <p>Your favorite color is: {favoriteColor}</p>
+    <h2>Demos</h2>
     <DemoPageLinks />
     </Layout>
   )

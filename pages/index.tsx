@@ -31,7 +31,7 @@ const Demo = () => {
 
   return (
     <Layout>
-      <h3>{t('home')}</h3>
+      <h1>{t('home')}</h1>
       <Hello inputMessage={user.email ? user.email : 'No email'}/> 
       <p>
         This page does not require authentication, so it won't redirect to
@@ -41,8 +41,9 @@ const Demo = () => {
         If you remove `getServerSideProps` from this page, it will be static
         and load the authed user only on the client side.
       </p>
+      <h2>Demos</h2>
       <DemoPageLinks />    
-      <h3>Clock</h3>
+      <h2>Clock</h2>
       <Clock /> 
     </Layout>
   )

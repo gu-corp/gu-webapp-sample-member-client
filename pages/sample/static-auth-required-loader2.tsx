@@ -53,7 +53,7 @@ const Demo = () => {
     <Layout>
       <div style={styles.content}>
         <div style={styles.infoTextContainer}>
-          <h3>Example: static + loader</h3>
+          <h1>Example: static + loader</h1>
           <p>
             This page requires is static but requires authentication. Before the
             Firebase client SDK initializes, it shows a loader. After
@@ -62,6 +62,7 @@ const Demo = () => {
           </p>
           <p>Your favorite color is: {favoriteColor}</p>
         </div>
+        <h2>Demos</h2>
         <DemoPageLinks />
       </div>
     </Layout>
