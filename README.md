@@ -2,14 +2,14 @@
 ## Requirement
 - Node.js v12
 
-## Install nobules
+### 1.Install nobules
 ```
 npm i
 ```
-## Put .env.local to the root folder
+### 2.Put .env.local to the root folder
 - Please see .env.local.example
 
-## Run the development server:
+### 3.Run the development server:
 
 ```bash
 npm run dev
