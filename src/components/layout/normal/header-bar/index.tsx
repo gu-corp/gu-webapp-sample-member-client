@@ -135,7 +135,7 @@ export default function HeaderBar({isDrawerOpen, handleDrawerOpen, handleDrawerC
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.appBarTitle} noWrap>
-          Mini variant drawer
+          G.U.iD Portal
         </Typography>
         <LanguageSelector />        
         <div className={classes.sectionDesktop}>

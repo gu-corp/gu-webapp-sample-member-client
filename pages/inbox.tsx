@@ -17,7 +17,7 @@ const Demo = () => {
 
   return (
     <Layout>
-      <h1>{t('home')}</h1>  
+      <h1>{t('inbox')}</h1>  
     </Layout>
   )
 }

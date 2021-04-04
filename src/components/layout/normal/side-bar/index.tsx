@@ -1,65 +1,82 @@
+// React
 import React from 'react';
-import clsx from 'clsx';
+
+// Next 
+import { useRouter } from 'next/router'
+
+// Material UI
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { Home, Inbox, Settings, AccountBalanceWallet, Person, Notifications } from '@material-ui/icons';
+
+// Utility
+import clsx from 'clsx';
+
+// Style
 import { useStyles } from './style';
 
 export default function MiniDrawer({isDrawerOpen, handleDrawerOpen, handleDrawerClose}) {
   const classes = useStyles();
   const theme = useTheme();
+  const router = useRouter()
 
   return (    
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
+    <Drawer
+      variant="permanent"
+      className={clsx(classes.drawer, {
+        [classes.drawerOpen]: isDrawerOpen,
+        [classes.drawerClose]: !isDrawerOpen,
+      })}
+      classes={{
+        paper: clsx({
           [classes.drawerOpen]: isDrawerOpen,
           [classes.drawerClose]: !isDrawerOpen,
-        })}
-        classes={{
-          paper: clsx({
-            [classes.drawerOpen]: isDrawerOpen,
-            [classes.drawerClose]: !isDrawerOpen,
-          }),
-        }}
-      >
-        <div className={classes.toolbar}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+        }),
+      }}
+    >
+      <div className={classes.toolbar}>
+        <IconButton onClick={handleDrawerClose}>
+          {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+        </IconButton>
+      </div>
+      <Divider />
+      <List> 
+      <ListItem button key={'Home'} onClick={ ()=>{ router.push('/')}}>
+          <ListItemIcon><Inbox /></ListItemIcon>
+          <ListItemText primary={'Home'} />
+        </ListItem>
+        <ListItem button key={'Inbox'} onClick={ ()=>{ router.push('/inbox')}}>
+          <ListItemIcon><Inbox /></ListItemIcon>
+          <ListItemText primary={'Inbox'} />
+        </ListItem>
+        <ListItem button key={'Proifle'} onClick={ ()=>{ router.push('/profile')}}>
+          <ListItemIcon><Person /></ListItemIcon>
+          <ListItemText primary={'Profile'} />
+        </ListItem>
+        <ListItem button key={'Wallet'} onClick={ ()=>{ router.push('/wallet')}}>
+          <ListItemIcon><AccountBalanceWallet /></ListItemIcon>
+          <ListItemText primary={'Wallet'} />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+      <ListItem button key={'Notification'} onClick={ ()=>{ router.push('/notification')}}>
+          <ListItemIcon><Notifications /></ListItemIcon>
+          <ListItemText primary={'Notification'} />
+        </ListItem>
+        <ListItem button key={'Setting'} onClick={ ()=>{ router.push('/setting')}}>
+          <ListItemIcon><Settings /></ListItemIcon>
+          <ListItemText primary={'Setting'} />
+        </ListItem>
+      </List>
+    </Drawer>
   );
 }

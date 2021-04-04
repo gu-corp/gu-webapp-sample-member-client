@@ -4,25 +4,22 @@ import { typePendingReducerSet, TypeReduxPendingState, createTypeReduxInitialSta
 import assign from 'object-assign';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import * as HelloReducer from './reducers/hello-reducer';
+import * as WindowStateReducer from './reducers/window-state-reducer';
 import * as BookReducer from './reducers/book-reducer';
-import * as TickReducer from './reducers/tick-reducer';
 
 export const rootReducer = combineReducers({
   ...typePendingReducerSet,
-  helloState: HelloReducer.reducer,
+  windowState: WindowStateReducer.reducer,
   bookState: BookReducer.reducer,
-  tickState: TickReducer.reducer
 });
 
 export interface RootState extends TypeReduxPendingState {
-  helloState: HelloReducer.IState;
+  windowState: WindowStateReducer.IState;
   bookState: BookReducer.IState;
-  tickState: TickReducer.IState;
 }
 
 export const InitialState: RootState = assign(createTypeReduxInitialState(), {
-  helloState: HelloReducer.initialState,
+  windowState: WindowStateReducer.initialState,
   bookState: BookReducer.initialState
 });
 
