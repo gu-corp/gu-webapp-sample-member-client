@@ -1,4 +1,8 @@
 {
-  "message": "Mesメッセージsage2",
-  "home": "Home"
+  "home": "ホーム",
+  "inbox": "お知らせ",
+  "profile": "プロファイル",
+  "wallet": "ウォレット",
+  "notification": "通知",
+  "setting": "設定"
 }

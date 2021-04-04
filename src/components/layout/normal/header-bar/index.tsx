@@ -1,5 +1,12 @@
+// React
 import React from 'react';
+
+// Next 
+import { useRouter } from 'next/router'
+
 import clsx from 'clsx';
+
+// Material UI
 import { useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,14 +19,11 @@ import Button from '@material-ui/core/Button';
 import { useStyles } from './styles';
 import { useAuthUser, withAuthUser, AuthAction } from 'next-firebase-auth'
 import { LanguageSelector } from '@components/LanguageSelector'
-import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
-import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { useRouter } from 'next/router'
 
 export default function HeaderBar({isDrawerOpen, handleDrawerOpen, handleDrawerClose}) {
   const classes = useStyles();
@@ -139,12 +143,12 @@ export default function HeaderBar({isDrawerOpen, handleDrawerOpen, handleDrawerC
         </Typography>
         <LanguageSelector />        
         <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton aria-label="show 4 new mails" color="inherit"　onClick={ ()=>{ router.push('/inbox')}}>
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <IconButton aria-label="show 17 new notifications" color="inherit" onClick={ ()=>{ router.push('/notification')}}>
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>

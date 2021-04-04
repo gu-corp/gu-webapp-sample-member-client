@@ -50,7 +50,7 @@ export default function MiniDrawer({isDrawerOpen, handleDrawerOpen, handleDrawer
       <Divider />
       <List> 
       <ListItem button key={'Home'} onClick={ ()=>{ router.push('/')}}>
-          <ListItemIcon><Inbox /></ListItemIcon>
+          <ListItemIcon><Home /></ListItemIcon>
           <ListItemText primary={'Home'} />
         </ListItem>
         <ListItem button key={'Inbox'} onClick={ ()=>{ router.push('/inbox')}}>

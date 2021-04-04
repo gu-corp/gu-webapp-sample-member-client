@@ -1,4 +1,8 @@
 {
-  "message": "Message2",
-  "home": "Home"
+  "home": "Home",
+  "inbox": "Inbox",
+  "profile": "Profile",
+  "wallet": "Wallet",
+  "notification": "Notification",
+  "setting": "Setting"
 }
