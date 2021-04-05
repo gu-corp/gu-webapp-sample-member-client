@@ -1,5 +1,5 @@
 // React
-import React from 'react';
+import React, { useContext } from 'react';
 
 // Next 
 import { useRouter } from 'next/router'
@@ -16,6 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Home, Inbox, Settings, AccountBalanceWallet, Person, Notifications } from '@material-ui/icons';
+import { LayoutContext } from '../index';
 
 // Utility
 import clsx from 'clsx';
@@ -23,27 +24,28 @@ import clsx from 'clsx';
 // Style
 import { useStyles } from './style';
 
-export default function MiniDrawer({isDrawerOpen, handleDrawerOpen, handleDrawerClose}) {
+export default function MiniDrawer({}) {
   const classes = useStyles();
   const theme = useTheme();
   const router = useRouter()
+  const layoutContext = useContext(LayoutContext);
 
   return (    
     <Drawer
       variant="permanent"
       className={clsx(classes.drawer, {
-        [classes.drawerOpen]: isDrawerOpen,
-        [classes.drawerClose]: !isDrawerOpen,
+        [classes.drawerOpen]: layoutContext.isDrawerOpen,
+        [classes.drawerClose]: !layoutContext.isDrawerOpen,
       })}
       classes={{
         paper: clsx({
-          [classes.drawerOpen]: isDrawerOpen,
-          [classes.drawerClose]: !isDrawerOpen,
+          [classes.drawerOpen]: layoutContext.isDrawerOpen,
+          [classes.drawerClose]: !layoutContext.isDrawerOpen,
         }),
       }}
     >
       <div className={classes.toolbar}>
-        <IconButton onClick={handleDrawerClose}>
+        <IconButton onClick={layoutContext.closeDrawer}>
           {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
         </IconButton>
       </div>

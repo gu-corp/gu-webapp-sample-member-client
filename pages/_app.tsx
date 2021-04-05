@@ -44,7 +44,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           }}
           autoHideDuration={3000}
         >
-          <Provider store={store}>
+          <Provider store={store}>            
             <Component {...pageProps} />
           </Provider>
         </SnackbarProvider>

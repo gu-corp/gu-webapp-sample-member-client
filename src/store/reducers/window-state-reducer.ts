@@ -3,20 +3,27 @@ import { createTypeReducer } from '@gulabs/redux-async-lib';
 import * as WindowStateActions from '../actions/window-state-actions';
 
 export type IState = {
-  isSidebarOpened: boolean;
+  isDrawerOpen: boolean;
 };
 
 export const initialState: IState = {
-  isSidebarOpened: true
+  isDrawerOpen: true
 };
 
-export const toggleSidebarOpenStateReducer = WindowStateActions.toggleSidebarOpenStateAction.reducer<IState>((state, action) => {
+export const openDrawerReducer = WindowStateActions.openDrawer.reducer<IState>((state, action) => {
   return {
-    isSidebarOpened: !state.isSidebarOpened
+    isDrawerOpen: true
+  };
+});
+
+export const closeDrawerReducer = WindowStateActions.closeDrawer.reducer<IState>((state, action) => {
+  return {
+    isDrawerOpen: false
   };
 });
 
 export const reducer = createTypeReducer(
   initialState,
-  toggleSidebarOpenStateReducer
+  openDrawerReducer,
+  closeDrawerReducer
 );

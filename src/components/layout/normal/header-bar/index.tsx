@@ -1,5 +1,5 @@
 // React
-import React from 'react';
+import React, { useContext } from 'react';
 
 // Next 
 import { useRouter } from 'next/router'
@@ -24,12 +24,14 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { LayoutContext } from '../index';
 
-export default function HeaderBar({isDrawerOpen, handleDrawerOpen, handleDrawerClose}) {
+export default function HeaderBar() {
   const classes = useStyles();
   const theme = useTheme();
   const user = useAuthUser(); 
   const router = useRouter()
+  const context = useContext(LayoutContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -47,7 +49,7 @@ export default function HeaderBar({isDrawerOpen, handleDrawerOpen, handleDrawerC
 
   const handleMenuClose = () => {
     setAnchorEl(null);
-    handleMobileMenuClose();
+    context.closeDrawer();
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -123,17 +125,17 @@ export default function HeaderBar({isDrawerOpen, handleDrawerOpen, handleDrawerC
     <AppBar
       position="fixed"
       className={clsx(classes.appBar, {
-        [classes.appBarShift]: isDrawerOpen,
+        [classes.appBarShift]: context.isDrawerOpen,
       })}
     >
       <Toolbar>
         <IconButton
           color="inherit"
           aria-label="open drawer"
-          onClick={handleDrawerOpen}
+          onClick={context.openDrawer}
           edge="start"
           className={clsx(classes.menuButton, {
-            [classes.hide]: isDrawerOpen,
+            [classes.hide]: context.isDrawerOpen,
           })}
         >
           <MenuIcon />
