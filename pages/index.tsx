@@ -18,6 +18,7 @@ const Demo = () => {
   return (
     <Layout>
       <h1>{t('home')}</h1>  
+      <p>Hello !</p>
     </Layout>
   )
 }
