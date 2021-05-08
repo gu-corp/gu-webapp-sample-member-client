@@ -1,0 +1,5 @@
+mutation AddTask($name: String!) {
+  addTask(newTaskData:{ name: $name }) {
+    name
+  }
+}

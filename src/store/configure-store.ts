@@ -5,22 +5,18 @@ import assign from 'object-assign';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import * as WindowStateReducer from './reducers/window-state-reducer';
-import * as BookReducer from './reducers/book-reducer';
 
 export const rootReducer = combineReducers({
   ...typePendingReducerSet,
   windowState: WindowStateReducer.reducer,
-  bookState: BookReducer.reducer,
 });
 
 export interface RootState extends TypeReduxPendingState {
   windowState: WindowStateReducer.IState;
-  bookState: BookReducer.IState;
 }
 
 export const InitialState: RootState = assign(createTypeReduxInitialState(), {
   windowState: WindowStateReducer.initialState,
-  bookState: BookReducer.initialState
 });
 
 const middlewares = [typeReduxMiddleware, promiseMiddleware];
