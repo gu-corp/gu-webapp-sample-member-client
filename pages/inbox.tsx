@@ -22,7 +22,7 @@ const Demo = () => {
   return (
     <Layout>
       <h1>{t('inbox')}</h1>  
-      <TaskList initialData={hoge}/>
+      <TaskList />
       <AddTask />
     </Layout>
   )

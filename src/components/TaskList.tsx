@@ -4,17 +4,27 @@ import { InferGetServerSidePropsType } from "next";
 
 import { client } from "../graphql/client";
 import { ListTasksDocument, ListTasksQuery, ListTasksQueryVariables, useListTasksQuery  } from "~/graphql/generated/graphql";
+import {
+  useAuthUser,
 
-export const getServerSideProps = async () => {
-  const { data } = await client.query<ListTasksQuery, ListTasksQueryVariables>({
-    query: ListTasksDocument,
-  });
-  return { props: { initialData: data } };
-};
+} from 'next-firebase-auth'
 
-export const TaskList = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+// export const getServerSideProps = async () => {
+//   const { data } = await client.query<ListTasksQuery, ListTasksQueryVariables>({
+//     query: ListTasksDocument,
+//   });
+//   return { props: { initialData: data } };
+// };
+
+// export const TaskList = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+export const TaskList = (props) => {
+
+  const AuthUser = useAuthUser();
+  if ( !AuthUser.email ) {
+    return <div>Loading.</div>
+  }
   const { data, refetch, loading, error  } = useListTasksQuery();
-  if ( loading ) {
+  if ( !data || loading ) {
     return <div>Loading..</div>
   }
   const tasksData = data ? data.listTasks : props.initialData.listTasks;

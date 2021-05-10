@@ -13,6 +13,7 @@ import '@styles/globals.css'
 import initAuth from '~/utils/initAuth'
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../src/graphql/client";
+import { useAuthUser } from 'next-firebase-auth'
 
 initAuth();
 

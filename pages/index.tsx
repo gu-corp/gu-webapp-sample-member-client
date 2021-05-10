@@ -12,11 +12,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Demo = () => {
   const { t } = useTranslation('common')
+  const AuthUser = useAuthUser();
 
   return (
     <Layout>
       <h1>{t('home')}</h1>  
-      <p>Hello !</p>
+      <p>Hello ! </p>
+      <p>Your email is {AuthUser.email ? AuthUser.email : "unknown"}.</p>
     </Layout>
   )
 }
