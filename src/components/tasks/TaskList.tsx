@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 
 import { InferGetServerSidePropsType } from "next";
 
-import { client } from "../graphql/client";
+import { client } from "../../graphql/client";
 import { ListTasksDocument, ListTasksQuery, ListTasksQueryVariables, useListTasksQuery  } from "~/graphql/generated/graphql";
 import {
   useAuthUser,
@@ -23,16 +23,22 @@ export const TaskList = (props) => {
   if ( !AuthUser.email ) {
     return <div>Loading.</div>
   }
+  
   const { data, refetch, loading, error  } = useListTasksQuery();
   if ( !data || loading ) {
-    return <div>Loading..</div>
+    return (<>
+      <div>EMail: {AuthUser.email}</div>
+      <div>Loading..</div>
+      </>
+    );
   }
   const tasksData = data ? data.listTasks : props.initialData.listTasks;
 
 
   return (
     <>
-      <div>Nest Next TODO Sample</div>
+      <h2>Nest Next TODO Sample</h2>
+      <p>EMail: {AuthUser.email}</p>
       <div>
         { tasksData.map(task => {
           return (

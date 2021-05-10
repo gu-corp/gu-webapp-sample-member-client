@@ -16,7 +16,6 @@ export const AddTask = (props) => {
 
   return (
     <>
-      <h2>Add Task</h2>
       <div>
         <TextField 
           id="outlined-basic" label="Outlined" variant="outlined" value={text} 

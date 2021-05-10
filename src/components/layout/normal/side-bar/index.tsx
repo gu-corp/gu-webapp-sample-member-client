@@ -57,7 +57,7 @@ export default function MiniDrawer({}) {
         </ListItem>
         <ListItem button key={'Inbox'} onClick={ ()=>{ router.push('/inbox')}}>
           <ListItemIcon><Inbox /></ListItemIcon>
-          <ListItemText primary={'Inbox'} />
+          <ListItemText primary={'Task'} />
         </ListItem>
         <ListItem button key={'Proifle'} onClick={ ()=>{ router.push('/profile')}}>
           <ListItemIcon><Person /></ListItemIcon>

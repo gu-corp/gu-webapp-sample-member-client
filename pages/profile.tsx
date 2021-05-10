@@ -9,7 +9,7 @@ import Layout from '@components/layout/normal'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { AddTask } from '@components/AddTask';
+import { AddTask } from '~/components/tasks/AddTask';
 
 const Demo = () => {
   const user = useAuthUser()

@@ -26,6 +26,7 @@ const asyncAuthLink = setContext(
       const auth = firebase.auth();
       const currentUser = auth.currentUser;
       if ( currentUser ) {
+        console.log('Calling server api');
         currentUser
         .getIdToken()
         .then( token => {
