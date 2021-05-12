@@ -14,6 +14,7 @@ import initAuth from '~/utils/initAuth'
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../src/graphql/client";
 import { useAuthUser } from 'next-firebase-auth'
+import Collapse from '@material-ui/core/Collapse';
 
 initAuth();
 
@@ -46,6 +47,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
               vertical: 'bottom',
               horizontal: 'right',
             }}
+            TransitionComponent={Collapse}
             autoHideDuration={3000}
           >
             <Provider store={store}>            

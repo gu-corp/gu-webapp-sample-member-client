@@ -21,27 +21,18 @@ const httpLink = createHttpLink({
 // });
 
 const asyncAuthLink = setContext(
-  request =>
-    new Promise((success, fail) => {
-      const auth = firebase.auth();
-      const currentUser = auth.currentUser;
-      if ( currentUser ) {
-        currentUser
-        .getIdToken()
-        .then( token => {
-          success({
-            headers: {
-              // 'Access-Control-Allow-Origin': 'http://localhost:3000/',
-              authorization: token ? `Bearer ${token}` : "",
-            }
-          });
-        }).catch( err => {
-          fail(err);
-        });
-      } else {
-        success({});
-      }
-    })
+  async(request) => {
+    const currentUser = await firebase.auth().currentUser;
+    if ( currentUser ) {
+      const token = await currentUser.getIdToken();
+      return {
+        headers: {
+          // 'Access-Control-Allow-Origin': 'http://localhost:3000/',
+          authorization: token ? `Bearer ${token}` : "",
+        }
+      };
+    }
+  }
 );
 
 export const client = new ApolloClient({
