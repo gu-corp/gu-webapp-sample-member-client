@@ -19,7 +19,7 @@ const Demo = () => {
   return (
     <Layout>
       <h1>{t('home')}</h1>  
-      <p>Hello ! </p>
+      <h2>Welcome to webapp sample!</h2>
       <p>Your email is {AuthUser.email ? AuthUser.email : "unknown"}.</p>
       <TaskList />
       <AddTask />

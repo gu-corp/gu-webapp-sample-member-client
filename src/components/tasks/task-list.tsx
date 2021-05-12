@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { withSnackbar } from 'notistack';
-import { ListTasksDocument, ListTasksQuery, ListTasksQueryVariables, useListTasksLazyQuery, useListTasksQuery  } from "~/graphql/generated/graphql";
 import { useAuthUser, withAuthUser } from 'next-firebase-auth'
+
+// Matelial-ui
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+// App
+import { useListTasksLazyQuery } from "~/graphql/generated/graphql";
 
 const TaskList = (props) => {
   const user = useAuthUser();
@@ -22,7 +27,7 @@ const TaskList = (props) => {
   }
 
   if ( !user.email || !data || loading ) {
-    return <div>Loading..</div>
+    return <CircularProgress />
   }
   const tasksData = data ? data.listTasks : props.initialData.listTasks;
 
