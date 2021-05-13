@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "init": "npm i && cp ./.env.local.example ./.env.local",
+    "init": "npm i && node -e \"require('fs').copyFileSync('./.env.local.example', './.env.local')\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
