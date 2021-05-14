@@ -6,8 +6,13 @@
     "init": "npm i && node -e \"require('fs').copyFileSync('./.env.local.example', './.env.local')\"",
     "dev": "next dev",
     "build": "next build",
+    "selenium": "./node_modules/.bin/selenium-standalone start",
+    "selenium:install": "./node_modules/.bin/selenium-standalone install",
+    "test": "mocha test/test.js",
     "start": "next start",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",
@@ -41,7 +46,26 @@
   "devDependencies": {
     "@types/node": "^14.14.32",
     "@types/react": "^17.0.3",
+    "chai": "^4.3.4",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0",
+    "prop-types": "^15.7.2",
+    "selenium-standalone": "^6.23.0",
     "typescript": "^4.2.3",
-    "prop-types": "^15.7.2"
+    "wdio": "^4.0.0",
+    "webdriverio": "^7.5.7"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "all"
   }
 }
