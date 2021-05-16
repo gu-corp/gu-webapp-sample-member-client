@@ -9,7 +9,7 @@ import Layout from '@components/layout/normal'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { AddTaskForm } from '~/components/tasks/add-task-form';
+import { AddTaskForm } from '~/components/tasks/';
 import { TaskList } from '~/components/tasks';
 
 const Demo = () => {

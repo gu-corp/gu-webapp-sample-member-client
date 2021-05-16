@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from 'next-i18next'
+import { withSnackbar } from 'notistack';
 
 import { useListTasksQuery } from "~/graphql/generated/graphql";
 import { useAddTaskMutation } from "~/graphql/generated/graphql";
@@ -33,7 +34,7 @@ const initialValues: FormValues = {
   taskName: '',
 }
 
-export const AddTaskForm = (props) => {
+const AddTaskForm = (props) => {
   const { t } = useTranslation('common')
   const [addTask] = useAddTaskMutation();
   const {refetch} = useListTasksQuery();
@@ -44,7 +45,7 @@ export const AddTaskForm = (props) => {
       try {
         await addTask({ variables: { name: values.taskName } });
         await refetch();
-      } catch ( error ) {
+      } catch (error) {
         props.enqueueSnackbar(error.message, { 
           variant: 'error',
           preventDuplicate: true,
@@ -83,3 +84,5 @@ export const AddTaskForm = (props) => {
     </Formik>
   );
 };
+
+export default withSnackbar(AddTaskForm);
