@@ -4,5 +4,8 @@
   "profile": "プロファイル",
   "wallet": "ウォレット",
   "notification": "通知",
-  "setting": "設定"
+  "setting": "設定",
+  "task_name": "タスク名",
+  "the_number_of_characters_cannot_be_more_than_10": "文字数を10文字以上にすることはできません。",
+  "this_field_cannot_be_empty": "このフィールドは空にすることはできません。"
 }

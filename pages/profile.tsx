@@ -9,7 +9,8 @@ import Layout from '@components/layout/normal'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { AddTask } from '~/components/tasks/add-task';
+import { AddTaskForm } from '~/components/tasks/add-task-form';
+import { TaskList } from '~/components/tasks';
 
 const Demo = () => {
   const user = useAuthUser()
@@ -19,7 +20,8 @@ const Demo = () => {
   return (
     <Layout>
       <h1>{t('profile')}</h1>  
-      <AddTask />
+      <TaskList />
+      <AddTaskForm />
     </Layout>
   )
 }

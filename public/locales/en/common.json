@@ -4,5 +4,8 @@
   "profile": "Profile",
   "wallet": "Wallet",
   "notification": "Notification",
-  "setting": "Setting"
+  "setting": "Setting",
+  "task_name": "Task Name",
+  "the_number_of_characters_cannot_be_more_than_10": "The number of characters cannot be more than 10.",
+  "this_field_cannot_be_empty": "This field cannot be empty."
 }

@@ -141,7 +141,7 @@ export default function HeaderBar() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.appBarTitle} noWrap>
-          G.U.iD Portal
+          G.U. Sample
         </Typography>
         <LanguageSelector />        
         <div className={classes.sectionDesktop}>

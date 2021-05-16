@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { TaskList } from '~/components/tasks';
-import { AddTask } from '~/components/tasks/add-task';
+import { AddTaskForm } from '~/components/tasks/add-task-form';
 
 const Demo = () => {
   const { t } = useTranslation('common')
@@ -22,7 +22,7 @@ const Demo = () => {
       <h2>Welcome to webapp sample!</h2>
       <p>Your email is {AuthUser.email ? AuthUser.email : "unknown"}.</p>
       <TaskList />
-      <AddTask />
+      <AddTaskForm />
     </Layout>
   )
 }

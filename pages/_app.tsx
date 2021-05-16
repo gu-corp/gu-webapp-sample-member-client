@@ -10,7 +10,7 @@ import theme from '~/styles/theme';
 import { useStore } from '@store/with-redux';
 import { InitialState } from '@store/configure-store';
 import '@styles/globals.css'
-import initAuth from '~/utils/initAuth'
+import initAuth from '~/common/firebase/initAuth'
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../src/graphql/client";
 import { useAuthUser } from 'next-firebase-auth'
