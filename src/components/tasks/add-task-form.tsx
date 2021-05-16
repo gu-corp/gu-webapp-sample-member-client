@@ -61,20 +61,20 @@ const AddTaskForm = (props) => {
       validate={async(values) => await validateObject(Object.assign(new NewTaskInput(), values))}
       onSubmit={handleSubmit}
     >
-      {({ submitForm, isSubmitting }) => (
+      {({ submitForm, isSubmitting, errors, isValid }) => (
         <Form className={classes.root}>
           <Field
             className={classes.input}
             component={TextField}
             name="taskName"
             label={t('task_name')}
-          />        
+          />    
           <br />
           <Button
             className={classes.button}
             variant="contained"
             color="primary"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !isValid}
             onClick={submitForm}
           >
            {isSubmitting ? <CircularProgress /> : "Submit" }
