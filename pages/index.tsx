@@ -5,12 +5,12 @@ import {
   withAuthUserTokenSSR,
   AuthAction
 } from 'next-firebase-auth'
-import Layout from '@components/layout/normal'
+import Layout from '@/components/layout/normal'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { TaskList } from '~/components/tasks';
-import { AddTaskForm } from '~/components/tasks/';
+import { TaskList } from '@/components/tasks';
+import { AddTaskForm } from '@/components/tasks/';
 
 const Demo = () => {
   const { t } = useTranslation('common')

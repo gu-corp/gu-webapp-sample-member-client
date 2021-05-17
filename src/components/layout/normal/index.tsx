@@ -7,8 +7,8 @@ import { useTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Redux Store
-import { RootState }　from '@store/configure-store';
-import { openDrawer, closeDrawer } from '@store/actions/window-state-actions';
+import { RootState }　from '@/store/configure-store';
+import { openDrawer, closeDrawer } from '@/store/actions/window-state-actions';
 
 // Components
 import { useStyles } from './style';

@@ -23,41 +23,8 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "~/*": [
+      "@/*": [
         "src/*"
-      ],
-      "@views/*": [
-        "src/views/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@store/*": [
-        "src/store/*"
-      ],
-      "@actions/*": [
-        "src/store/actions/*"
-      ],
-      "@helpers/*": [
-        "src/helpers/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@type/*": [
-        "src/types/*"
-      ],
-      "@i18n": [
-        "src/i18n"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@enums/*": [
-        "src/enums/*"
       ],
     }
   },

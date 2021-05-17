@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react';
 import { SnackbarProvider } from 'notistack';
 import { Provider } from 'react-redux';
+
+import App, { AppProps, AppContext } from 'next/app';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
+
+import { ApolloProvider } from "@apollo/client";
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import App, { AppProps, AppContext } from 'next/app';
-import { appWithTranslation } from 'next-i18next';
-import theme from '~/styles/theme';
-import { useStore } from '@store/with-redux';
-import { InitialState } from '@store/configure-store';
-import '@styles/globals.css'
-import initAuth from '~/common/firebase/initAuth'
-import { ApolloProvider } from "@apollo/client";
-import { client } from "../src/graphql/client";
-import { useAuthUser } from 'next-firebase-auth'
 import Collapse from '@material-ui/core/Collapse';
+
+import '@/styles/globals.css'
+import theme from '@/styles/theme';
+import initAuth from '@/common/firebase/init-auth'
+import { useStore } from '@/store/with-redux';
+import { InitialState } from '@/store/configure-store';
+import { client } from "@/graphql/client";
 
 initAuth();
 

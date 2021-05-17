@@ -18,7 +18,7 @@ import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
 import { useStyles } from './styles';
 import { useAuthUser, withAuthUser, AuthAction } from 'next-firebase-auth'
-import { LanguageSelector } from '@components/LanguageSelector'
+import { LanguageSelector } from '@/components/LanguageSelector'
 import Badge from '@material-ui/core/Badge';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';

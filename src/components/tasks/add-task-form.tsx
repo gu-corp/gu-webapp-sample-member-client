@@ -2,8 +2,8 @@ import React from "react";
 import { useTranslation } from 'next-i18next'
 import { withSnackbar } from 'notistack';
 
-import { useListTasksQuery } from "~/graphql/generated/graphql";
-import { useAddTaskMutation } from "~/graphql/generated/graphql";
+import { useListTasksQuery } from "@/graphql/generated/graphql";
+import { useAddTaskMutation } from "@/graphql/generated/graphql";
 
 import { Formik, Form, Field } from 'formik';
 import { TextField } from 'formik-material-ui';
@@ -11,7 +11,7 @@ import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { validateObject } from '~/common/validator/class-validator-helper';
+import { validateObject } from '@/common/validator/class-validator-helper';
 import { NewTaskInput } from './add-task.input';
 
 const useStyles = makeStyles((theme) => ({
@@ -68,6 +68,7 @@ const AddTaskForm = (props) => {
             component={TextField}
             name="taskName"
             label={t('task_name')}
+            variant="outlined"
           />    
           <br />
           <Button

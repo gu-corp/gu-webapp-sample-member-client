@@ -1,4 +1,4 @@
-import { MaxLength, IsNotEmpty, NotEquals } from 'class-validator';
+import { MaxLength, IsNotEmpty } from 'class-validator';
 
 export class NewTaskInput {
   @MaxLength(10, {

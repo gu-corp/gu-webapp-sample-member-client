@@ -6,7 +6,7 @@ import { useAuthUser, withAuthUser } from 'next-firebase-auth'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 // App
-import { useListTasksLazyQuery } from "~/graphql/generated/graphql";
+import { useListTasksLazyQuery } from "@/graphql/generated/graphql";
 
 const TaskList = (props) => {
   const user = useAuthUser();

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
-import { useListTasksQuery } from "~/graphql/generated/graphql";
+import { useListTasksQuery } from "@/graphql/generated/graphql";
 
-import { useAddTaskMutation } from "~/graphql/generated/graphql";
+import { useAddTaskMutation } from "@/graphql/generated/graphql";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
