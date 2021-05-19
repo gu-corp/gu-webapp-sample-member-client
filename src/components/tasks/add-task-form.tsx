@@ -26,11 +26,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-interface FormValues {
-  taskName: string;
-}
-
-const initialValues: FormValues = {
+const initialValues: NewTaskInput = {
   taskName: '',
 }
 
