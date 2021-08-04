@@ -51,24 +51,28 @@ export default function MiniDrawer({}) {
       </div>
       <Divider />
       <List> 
-      <ListItem button key={'Home'} onClick={ ()=>{ router.push('/')}}>
+      <ListItem button key={'Token'} onClick={ ()=>{ router.push('/')}}>
           <ListItemIcon><Home /></ListItemIcon>
-          <ListItemText primary={'Home'} />
-        </ListItem>
-        <ListItem button key={'Proifle'} onClick={ ()=>{ router.push('/profile')}}>
-          <ListItemIcon><Person /></ListItemIcon>
-          <ListItemText primary={'Profile'} />
-        </ListItem>
-        <ListItem button key={'Token'} onClick={ ()=>{ router.push('/token')}}>
-          <ListItemIcon><Inbox /></ListItemIcon>
           <ListItemText primary={'Token'} />
         </ListItem>
+        {/* <ListItem button key={'Proifle'} onClick={ ()=>{ router.push('/profile')}}>
+          <ListItemIcon><Person /></ListItemIcon>
+          <ListItemText primary={'Profile'} />
+        </ListItem> */}
+        {/* <ListItem button key={'Token'} onClick={ ()=>{ router.push('/token')}}>
+          <ListItemIcon><Inbox /></ListItemIcon>
+          <ListItemText primary={'Token'} />
+        </ListItem> */}
         <ListItem button key={'Wallet'} onClick={ ()=>{ router.push('/wallet')}}>
           <ListItemIcon><AccountBalanceWallet /></ListItemIcon>
           <ListItemText primary={'Wallet'} />
         </ListItem>
+        <ListItem button key={'Help'} onClick={ ()=>{ router.push('/help')}}>
+          <ListItemIcon><AccountBalanceWallet /></ListItemIcon>
+          <ListItemText primary={'Help'} />
+        </ListItem>
       </List>
-      <Divider />
+      {/* <Divider />
       <List>
       <ListItem button key={'Notification'} onClick={ ()=>{ router.push('/notification')}}>
           <ListItemIcon><Notifications /></ListItemIcon>
@@ -78,7 +82,7 @@ export default function MiniDrawer({}) {
           <ListItemIcon><Settings /></ListItemIcon>
           <ListItemText primary={'Setting'} />
         </ListItem>
-      </List>
+      </List> */}
     </Drawer>
   );
 }

@@ -141,20 +141,10 @@ export default function HeaderBar() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.appBarTitle} noWrap>
-          G.U. Sample
+          G.U.Token Issuer
         </Typography>
         <LanguageSelector />        
-        <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit"　onClick={ ()=>{ router.push('/inbox')}}>
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit" onClick={ ()=>{ router.push('/notification')}}>
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+        {/* <div className={classes.sectionDesktop}> 
             { user.email ? 
               <IconButton
                 edge="end"
@@ -166,7 +156,7 @@ export default function HeaderBar() {
               >
                 <AccountCircle />
               </IconButton> : <Button color="inherit" onClick={handleLogin}>Login</Button> }
-          </div>
+          </div> */}
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"

@@ -9,20 +9,18 @@ import Layout from '@/components/layout/normal'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { TaskList } from '@/components/tasks';
-import { AddTaskForm } from '@/components/tasks/';
+import TokenIssuer from '@/components/sandbox/token-issuer';
 
-const Demo = () => {
+const Home = () => {
   const { t } = useTranslation('common')
   const AuthUser = useAuthUser();
 
   return (
     <Layout>
-      <h1>{t('home')}</h1>  
-      <h2>Welcome to webapp sample!</h2>
-      <p>Your email is {AuthUser.email ? AuthUser.email : "unknown"}.</p>
-      <TaskList />
-      <AddTaskForm />
+      <p>このウェブサイトでは、G.U.Sandbox Chain用のテスト用トークンを無償発行する事ができます。トークンを取得するには、Lunascape Wallet等のEthererum互換ウォレットをブラウザにいれていただく必要があります。</p>
+      <p>詳細はこちらの記事をご覧ください。</p>
+      <hr />
+      <TokenIssuer />
     </Layout>
   )
 }
@@ -33,6 +31,4 @@ export const getServerSideProps = withAuthUserTokenSSR()(async ({ locale }) => (
   },
 }))
 
-export default withAuthUser({
-  whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
-})(Demo)
+export default Home

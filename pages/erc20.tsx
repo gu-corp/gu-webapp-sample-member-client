@@ -10,11 +10,11 @@ import Layout from '@/components/layout/normal'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { ERC20Publisher } from '@/components/erc20';
 import Web3 from 'web3';
 
-const Demo = () => {
+const ERC20Issuer = () => {
   const user = useAuthUser()
-  const dispatch = useDispatch()
   const [isEnabled, setIsEnabled] = useState(false);
   const [address, setAddress] = useState(undefined);
   const [ethBalance, setEthBalance] = useState(undefined);
@@ -34,14 +34,14 @@ const Demo = () => {
     let win: any = window;
     setIsEnabled(win.ethereum !== 'undefined');
     setInterval(() => {
-      console.log(win.ethereum);
+      // console.log(win.ethereum);
       setIsEnabled(win.ethereum !== 'undefined');
     },1000);
   }), [];
 
   useEffect(() => {
     let win: any = window;
-    console.log(win.ethereum);
+    // console.log(win.ethereum);
     if (win.ethereum !== 'undefined') {
       const web3: Web3  = new Web3(win.ethereum);  
       setAddress(win.ethereum.selectedAddress);
@@ -63,8 +63,6 @@ const Demo = () => {
       });
     }
   }), [address];
-
-
   
   const ethEnabled = () => {
     let win: any = window;
@@ -74,13 +72,6 @@ const Demo = () => {
     }
     return false;
   }
-
-  // const getEthBalance = () => {
-  //   const web3 = new Web3();
-  //   web3.eth.getBalance(walletAddress, (error, balance) => {
-  //     console.log(balance);
-  //   });
-  // }
 
   return (
     <Layout>
@@ -96,7 +87,9 @@ const Demo = () => {
       <Button variant="contained"
         color="primary"
         onClick={() => ethEnabled()}>Enabled</Button>
-      {/* <Button onClick={() => getAddress()}>getAddress</Button> */}
+      {/* <Button onClick={() => getAddress()}>getAddress</Button> */}     
+      <hr></hr>
+      <ERC20Publisher />
     </Layout>
   )
 }
@@ -107,6 +100,4 @@ export const getServerSideProps = withAuthUserTokenSSR()(async ({ locale }) => (
   },
 }))
 
-export default withAuthUser({
-  whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
-})(Demo)
+export default ERC20Issuer
